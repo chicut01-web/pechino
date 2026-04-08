@@ -100,6 +100,17 @@ export default function PechinoZaino() {
         }
 
         ctx.drawImage(targetImage, offsetX, offsetY, drawWidth, drawHeight);
+
+        // Disegna un rettangolo nero in basso a destra per coprire il watermark generato da tool esterni
+        ctx.fillStyle = "#000000";
+        const watermarkWidth = drawWidth * 0.2; // 20% della larghezza
+        const watermarkHeight = drawHeight * 0.05; // 5% dell'altezza
+        ctx.fillRect(
+          offsetX + drawWidth - watermarkWidth,
+          offsetY + drawHeight - watermarkHeight,
+          watermarkWidth,
+          watermarkHeight + 5 // +5 for extra safe bleeding to edges
+        );
       }
 
       animationFrameId = requestAnimationFrame(render);
@@ -190,7 +201,7 @@ export default function PechinoZaino() {
               style={{ opacity: opA, y: yA }}
               className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
             >
-              <h1 className="text-7xl md:text-9xl tracking-tighter font-bold text-white/90">
+              <h1 className="text-5xl md:text-7xl lg:text-9xl tracking-tighter font-bold text-white/90">
                 PORTALO OVUNQUE.
               </h1>
               <p className="mt-6 text-lg md:text-xl text-white/60 max-w-xl">
@@ -203,7 +214,7 @@ export default function PechinoZaino() {
               style={{ opacity: opB, y: yB }}
               className="absolute inset-0 flex flex-col justify-center md:pl-24 lg:pl-32 px-6"
             >
-              <h2 className="text-6xl md:text-8xl tracking-tighter font-bold text-white/90 max-w-3xl leading-[1.1]">
+              <h2 className="text-4xl md:text-6xl lg:text-8xl tracking-tighter font-bold text-white/90 max-w-3xl leading-[1.1]">
                 COSTRUZIONE SENZA COMPROMESSI
               </h2>
               <p className="mt-6 text-lg md:text-xl text-white/60 max-w-xl">
@@ -216,7 +227,7 @@ export default function PechinoZaino() {
               style={{ opacity: opC, y: yC }}
               className="absolute inset-0 flex flex-col justify-center items-end text-right md:pr-24 lg:pr-32 px-6"
             >
-              <h2 className="text-6xl md:text-8xl tracking-tighter font-bold text-white/90 max-w-2xl leading-[1.1]">
+              <h2 className="text-4xl md:text-6xl lg:text-8xl tracking-tighter font-bold text-white/90 max-w-2xl leading-[1.1]">
                 SPAZIO PENSATO
               </h2>
               <p className="mt-6 text-lg md:text-xl text-white/60 max-w-xl">
@@ -229,7 +240,7 @@ export default function PechinoZaino() {
               style={{ opacity: opD, y: yD }}
               className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
             >
-              <h2 className="text-7xl md:text-9xl tracking-tighter font-bold text-white/90 mb-6">
+              <h2 className="text-5xl md:text-7xl lg:text-9xl tracking-tighter font-bold text-white/90 mb-6">
                 PECHINO.
               </h2>
               <p className="text-lg md:text-xl text-white/60 mb-12">
