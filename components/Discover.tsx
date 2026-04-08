@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Discover() {
   return (
-    <section id="scopri" className="bg-[#000000] py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="scopri" className="bg-[#000000] py-20 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#C8A97E]/5 rounded-full blur-[120px] pointer-events-none" />
 
